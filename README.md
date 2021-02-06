@@ -13,7 +13,7 @@ Refer to ```python3 main.py --help``` for a detailed explanations of all applica
 
 ## Citation
 
-If you are interested in MLC, please cite the following paper
+If you are find MLC useful, please cite the following paper
 
 ```
 @article{zheng2021mlc,
@@ -25,5 +25,5 @@ If you are interested in MLC, please cite the following paper
 }
 ```
 
-This repository is release under MIT License. (See [LICENSE](LICENSE))
+This repository is released under MIT License. (See [LICENSE](LICENSE))
 
