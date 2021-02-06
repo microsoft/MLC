@@ -194,19 +194,7 @@ def run():
 
     results = {}
 
-    # 100 labels per class
-    gf_dict = {'yelp2': 200.0 / 560000,
-               'yelp5': 500.0 / 650000,
-               'amazon2': 200.0 / 3600000,
-               'amazon5': 500.0 / 3000000,
-               'dbpedia': 1400.0 / 560000,
-               'yahoo': 700.0 / 1400000,
-               'imdb2': 200.0 / 25000,
-               'ag': 400.0 / 120000,
-               }
-
-    # revisit this
-    gold_fractions = [0.05, 0.001, 0.01]
+    gold_fractions = [0.02] 
 
     if args.gold_fraction != -1:
         assert args.gold_fraction >=0 and args.gold_fraction <=1, 'Wrong gold fraction!'
