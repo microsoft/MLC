@@ -13,7 +13,6 @@ from torchvision.datasets.utils import download_url, check_integrity
 import torch
 import torch.nn.functional as F
 from torch.autograd import Variable as V
-import wideresnet as wrn
 import torchvision.transforms as transforms
 
 
@@ -169,11 +168,6 @@ class CIFAR10(data.Dataset):
                             C[tmp[j], tmp2] += corruption_prob * 1/len(tmp2)
                     self.C = C
                     print(C)
-                elif corruption_type == 'clabels':
-                    net = wrn.WideResNet(40, num_classes, 2, dropRate=0.3).cuda()
-                    model_name = './cifar{}_labeler'.format(num_classes)
-                    net.load_state_dict(torch.load(model_name))
-                    net.eval()
                 else:
                     assert False, "Invalid corruption type '{}' given. Must be in {'unif', 'flip', 'hierarchical'}".format(corruption_type)
 
