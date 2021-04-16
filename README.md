@@ -29,13 +29,13 @@ Refer to ```python3 main.py --help``` for a detailed explanations of all applica
 
 ## Citation
 
-If you are find MLC useful, please cite the following paper
+If you find MLC useful, please cite the following paper
 
 ```
-@article{zheng2021mlc,
+@inproceedings{zheng2021mlc,
   title={Meta Label Correction for Noisy Label Learning},
   author={Zheng, Guoqing and Awadallah, Ahmed Hassan and Dumais, Susan},  
-  journal={Proceedings of the AAAI Conference on Artificial Intelligence},
+  journal={Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)},
   volume={35},
   year={2021},
 }
