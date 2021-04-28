@@ -6,7 +6,7 @@ This repository contains the source code for the AAAI paper "Meta Label Correcti
 
 ## Data
 
-The code will download automatically the CIFAR data set; for Clothing1M, please contact the [original creator](https://github.com/Cysu/noisy_label) for access. Put the obtained Clothing1M data set under directory ```data/clothing1M```.
+The code will download automatically the CIFAR data set; for Clothing1M, please contact the [original creator](https://github.com/Cysu/noisy_label) for access. Put the obtained Clothing1M data set under directory ```data/clothing1M```. Execute 'cd CLOTHING1M; python3 load_cloth1m_data.py' to generate necessary folders for training.
 
 ## Example runs
 
