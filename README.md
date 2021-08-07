@@ -1,6 +1,6 @@
 # Meta Label Correction for Noisy Label Learning
 
-This repository contains the source code for the AAAI paper "Meta Label Correction for Noisy Label Learning".
+This repository contains the source code for the AAAI paper "[Meta Label Correction for Noisy Label Learning](https://ojs.aaai.org/index.php/AAAI/article/view/17319/17126)".
 
 ![mlc_model](mlc.png)
 
