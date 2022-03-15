@@ -21,7 +21,7 @@ python3 main.py --dataset cifar100 --optimizer sgd --bs 100 --corruption_type fl
 
 On Clothing1M, run MLC as 
 ```python
-python3 main.py --dataset clothing1m --optimizer sgd --bs 32 --corruption_type unif --corruption_level 0.1 --gold_fraction 0.1 --epochs 15 --main_lr 0.1 --meta_lr 3e-4 --runid clothing1m_run  --cls_dim 128
+python3 main.py --dataset clothing1m --optimizer sgd --bs 32 --corruption_type unif --corruption_level 0.1 --gold_fraction 0.1 --epochs 15 --main_lr 0.1 --meta_lr 0.003 --runid clothing1m_run --cls_dim 128 --skip --gradient_steps 5
 ```
 (Note that for clothing1m, ```corruption_type```, ```corruption_level```, and ```gold_fraction``` have no effect as the original dataset comes with actual noisy labels and clean/noisy data splits.)
 
