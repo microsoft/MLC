@@ -21,7 +21,7 @@ class MetaNet(nn.Module):
             nn.Tanh(),
             nn.Linear(self.hdim, self.hdim),
             nn.Tanh(),
-            nn.Linear(self.hdim, num_classes, bias=(not self.args.tie)) 
+            nn.Linear(self.hdim, num_classes + int(self.args.skip), bias=(not self.args.tie)) 
         )
 
         if self.args.sparsemax:
@@ -48,7 +48,7 @@ class MetaNet(nn.Module):
             self.net[4].bias.data.zero_()
 
     def get_alpha(self):
-        return torch.zeros(1)
+        return self.alpha if self.args.skip else torch.zeros(1)
 
     def forward(self, hx, y):
         bs = hx.size(0)
@@ -58,10 +58,18 @@ class MetaNet(nn.Module):
 
         logit = self.net(hin)
 
+        if self.args.skip:
+            alpha = torch.sigmoid(logit[:, self.num_classes:])
+            self.alpha = alpha.mean()
+            logit = logit[:, :self.num_classes]
+
         if self.args.sparsemax:
             out = self.sparsemax(logit) # test sparsemax
         else:
             out = F.softmax(logit, -1)
+
+        if self.args.skip:
+            out = (1.-alpha) * out + alpha * F.one_hot(y, self.num_classes).type_as(out)
 
         return out
 

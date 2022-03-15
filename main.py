@@ -47,6 +47,7 @@ parser.add_argument('--corruption_type', default='unif', type=str, choices=['uni
 parser.add_argument('--corruption_level', default='-1', type=float, help='Corruption level')
 parser.add_argument('--gold_fraction', default='-1', type=float, help='Gold fraction')
 
+parser.add_argument('--skip', default=False, action='store_true', help='Skip link for LCN (default: False)')
 parser.add_argument('--sparsemax', default=False, action='store_true', help='Use softmax instead of softmax for meta model (default: False)')
 parser.add_argument('--tie', default=False, action='store_true', help='Tie label embedding to the output classifier output embedding of metanet (default: False)')
 
