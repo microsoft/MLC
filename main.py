@@ -71,11 +71,16 @@ parser.add_argument('--local_rank', type=int, default=-1, help='local rank (-1 f
 
 args = parser.parse_args()
 
-# //////////////////////////// set logging ///////////////////////
+# //////////////// set logging and model outputs /////////////////
 filename = '_'.join([args.dataset, args.method, args.corruption_type, args.runid, str(args.epochs), str(args.seed), str(args.data_seed)])
+if not os.path.isdir('logs'):
+    os.mkdir('logs')
 logfile = 'logs/' + filename + '.log'
 logger = get_logger(logfile, args.local_rank)
-# //////////////////////////////////////////////////////////////////
+
+if not os.path.isdir('models'):
+    os.mkdir('models')
+# ////////////////////////////////////////////////////////////////
 
 logger.info(args)
 logger.info('CUDA available:' + str(torch.cuda.is_available()))
